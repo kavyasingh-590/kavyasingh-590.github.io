@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavya Singh - Creative AI Designer</title>
+    <title>Kavya Singh - Creative Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -50,17 +49,6 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
-            pointer-events: none;
         }
 
         .hero-content {
@@ -109,43 +97,6 @@
             background: rgba(255, 255, 255, 0.25);
         }
 
-        /* FLOATING ELEMENTS */
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .shape {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .shape:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .shape:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
         /* SECTIONS */
         .section {
             padding: 100px 0;
@@ -167,32 +118,155 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* SUMMARY BOX */
-        .summary {
-            background: var(--gradient-3);
-            padding: 3rem;
-            border-radius: 30px;
-            color: white;
+        /* CREATIVE PORTFOLIO GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+        
+        .card-video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 30px;
             text-align: center;
-            margin-bottom: 4rem;
+        }
+        
+        .card-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .card-description {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .card-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .featured-card {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        }
+        
+        .featured-card .card-content {
+            color: white;
+        }
+        
+        .featured-card .card-title {
+            color: white;
+            font-size: 2.2em;
+        }
+        
+        .featured-card .card-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1em;
+        }
+        
+        .video-overlay {
             position: relative;
             overflow: hidden;
         }
-
-        .summary::before {
-            content: '';
+        
+        .video-overlay::after {
+            content: "▶";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: shimmer 3s linear infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            color: white;
+            background: rgba(0,0,0,0.5);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .video-overlay:hover::after {
+            background: rgba(0,0,0,0.7);
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
-        @keyframes shimmer {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        /* AI PRODUCTS SECTION */
+        .ai-product {
+            background: var(--gradient-4);
+            padding: 4rem;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .gpt-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gpt-link:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         /* COMPETENCY CARDS */
@@ -245,80 +319,6 @@
             left: 0;
         }
 
-        /* AI PRODUCT SHOWCASE */
-        .ai-product {
-            background: var(--gradient-4);
-            padding: 4rem;
-            border-radius: 30px;
-            color: white;
-            text-align: center;
-            margin: 4rem 0;
-        }
-
-        .gpt-link {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .gpt-link:hover {
-            background: white;
-            color: var(--dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        /* PORTFOLIO GRID */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin: 4rem 0;
-        }
-
-        .project {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.4s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .project-header {
-            padding: 2rem;
-            background: var(--gradient-2);
-            color: white;
-        }
-
-        .project-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project img, .project video {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            margin: 1rem 0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
         /* CERTIFICATIONS */
         .cert-grid {
             display: grid;
@@ -337,6 +337,18 @@
 
         .cert-item:hover {
             transform: translateX(10px);
+        }
+
+        /* SUMMARY BOX */
+        .summary {
+            background: var(--gradient-3);
+            padding: 3rem;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
         }
 
         /* HIGHLIGHT BOX */
@@ -386,8 +398,12 @@
                 font-size: 2rem;
             }
             
-            .portfolio-grid {
+            .gallery {
                 grid-template-columns: 1fr;
+            }
+            
+            .featured-card {
+                grid-column: span 1;
             }
             
             .competencies {
@@ -411,12 +427,6 @@
 <body>
     <!-- HERO SECTION -->
     <section class="hero">
-        <div class="floating-shapes">
-            <div class="shape" style="width: 100px; height: 100px; background: var(--gradient-2); border-radius: 50%;"></div>
-            <div class="shape" style="width: 150px; height: 150px; background: var(--gradient-3); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
-            <div class="shape" style="width: 80px; height: 80px; background: var(--gradient-4); transform: rotate(45deg);"></div>
-        </div>
-        
         <div class="container">
             <div class="hero-content fade-in">
                 <h1>KAVYA SINGH</h1>
@@ -446,6 +456,169 @@
             <div class="summary fade-in">
                 <h2>Creative AI Innovator</h2>
                 <p><strong>Innovative AI product developer and digital marketing specialist</strong> with proven experience in building purpose-driven AI solutions and managing comprehensive digital campaigns. Creator of Smart Study Assistant GPT with strict educational focus and advanced user experience design. Certified in Google AI Essentials and Prompting, with demonstrated ability to leverage artificial intelligence for both product development and creative marketing optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI PRODUCTS SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">🚀 AI Product Innovation</h2>
+            
+            <div class="ai-product fade-in">
+                <h3>Smart Study Assistant GPT</h3>
+                <p>Specialized Educational AI Tool with Advanced Boundary Design</p>
+                <a href="https://chatgpt.com/g/g-699f608523cc8191a56fa6d83c3ed2c1-smart-study-assistant" class="gpt-link" target="_blank">
+                    🎓 Experience Live AI Tool →
+                </a>
+            </div>
+            
+            <div class="ai-product fade-in">
+                <h3>Flash Card Generator</h3>
+                <p>AI-Powered Study Tool Built with Modern Full-Stack Technology</p>
+                <a href="https://flash-card-gen.lovable.app/" class="gpt-link" target="_blank">
+                    🃏 Try Flash Card Generator →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREATIVE PORTFOLIO SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">🎨 Creative Design Portfolio</h2>
+            
+            <div class="gallery">
+                <!-- Featured: New Velora Citrus Spark -->
+                <div class="card featured-card">
+                    <img src="velora-citrus-spark.jpg" alt="Velora Citrus Spark Energy Drink" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">🍊 Velora Citrus Spark</h2>
+                        <p class="card-description">Dynamic energy drink advertisement featuring vibrant citrus design with premium branding and energetic visual appeal.</p>
+                        <div class="card-tags">
+                            <span class="tag">Product Design</span>
+                            <span class="tag">Advertisement</span>
+                            <span class="tag">Branding</span>
+                            <span class="tag">Energy Drinks</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cherry Bloom Fragrance -->
+                <div class="card">
+                    <img src="cherry-perfume.jpg" alt="Cherry Bloom Fragrance" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Cherry Bloom Fragrance</h2>
+                        <p class="card-description">Elegant fragrance advertisement featuring delicate cherry blossoms and premium perfume branding.</p>
+                        <div class="card-tags">
+                            <span class="tag">Fragrance</span>
+                            <span class="tag">Luxury</span>
+                            <span class="tag">Beauty</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Velora Cosmetics Video -->
+                <div class="card">
+                    <div class="video-overlay">
+                        <video src="Velora.mp4" class="card-video" controls poster="velora-citrus-spark.jpg">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Velora Cosmetics</h2>
+                        <p class="card-description">Premium cosmetics brand video showcasing luxury beauty products with elegant visual storytelling.</p>
+                        <div class="card-tags">
+                            <span class="tag">Video</span>
+                            <span class="tag">Cosmetics</span>
+                            <span class="tag">Luxury</span>
+                            <span class="tag">Beauty</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Product Advertisement -->
+                <div class="card">
+                    <div class="video-overlay">
+                        <video src="AI-product-ad.mp4" class="card-video" controls>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">AI Product Advertisement</h2>
+                        <p class="card-description">Cutting-edge AI product commercial featuring innovative technology solutions and futuristic design elements.</p>
+                        <div class="card-tags">
+                            <span class="tag">Video</span>
+                            <span class="tag">AI Technology</span>
+                            <span class="tag">Innovation</span>
+                            <span class="tag">Tech</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Strawberry Ice Cream -->
+                <div class="card">
+                    <img src="strawberry-icecream.jpg" alt="Strawberry Ice Cream Campaign" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Strawberry Dream</h2>
+                        <p class="card-description">Vibrant strawberry ice cream campaign featuring fresh, appetizing visuals and playful summer branding.</p>
+                        <div class="card-tags">
+                            <span class="tag">Food</span>
+                            <span class="tag">Summer</span>
+                            <span class="tag">Ice Cream</span>
+                            <span class="tag">Fresh</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chocolate Ice Cream -->
+                <div class="card">
+                    <img src="chocolate-icecream.jpg" alt="Chocolate Ice Cream Campaign" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Chocolate Indulgence</h2>
+                        <p class="card-description">Rich chocolate ice cream advertisement emphasizing premium quality and indulgent taste experience.</p>
+                        <div class="card-tags">
+                            <span class="tag">Food</span>
+                            <span class="tag">Chocolate</span>
+                            <span class="tag">Premium</span>
+                            <span class="tag">Indulgent</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pistachio Ice Cream -->
+                <div class="card">
+                    <img src="pistachio-icecream.jpg" alt="Pistachio Ice Cream Campaign" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Pistachio Delight</h2>
+                        <p class="card-description">Sophisticated pistachio ice cream design featuring natural ingredients and artisanal quality branding.</p>
+                        <div class="card-tags">
+                            <span class="tag">Gourmet</span>
+                            <span class="tag">Natural</span>
+                            <span class="tag">Artisanal</span>
+                            <span class="tag">Pistachio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Strawberry Advertisement Video -->
+                <div class="card">
+                    <div class="video-overlay">
+                        <video src="strawberry-ad.mp4" class="card-video" controls>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Strawberry Campaign</h2>
+                        <p class="card-description">Dynamic strawberry product video featuring fresh ingredients and vibrant summer appeal.</p>
+                        <div class="card-tags">
+                            <span class="tag">Video</span>
+                            <span class="tag">Strawberry</span>
+                            <span class="tag">Fresh</span>
+                            <span class="tag">Summer</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -494,92 +667,6 @@
                         <li>Motion Graphics & Animation</li>
                         <li>AI Tool Integration</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI PRODUCTS SECTION -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">🚀 AI Product Innovation</h2>
-            
-            <div class="ai-product fade-in">
-                <h3>Smart Study Assistant GPT</h3>
-                <p>Specialized Educational AI Tool with Advanced Boundary Design</p>
-                <a href="https://chatgpt.com/g/g-699f608523cc8191a56fa6d83c3ed2c1-smart-study-assistant" class="gpt-link" target="_blank">
-                    🎓 Experience Live AI Tool →
-                </a>
-            </div>
-            
-            <div class="ai-product fade-in">
-                <h3>Flash Card Generator</h3>
-                <p>AI-Powered Study Tool Built with Modern Full-Stack Technology</p>
-                <a href="https://flash-card-gen.lovable.app/" class="gpt-link" target="_blank">
-                    🃏 Try Flash Card Generator →
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CREATIVE PORTFOLIO SECTION -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">🎨 Creative Design Portfolio</h2>
-            
-            <div class="portfolio-grid">
-                <div class="project fade-in">
-                    <div class="project-header">
-                        <h3>Cherry Bloom Fragrance Campaign</h3>
-                        <p>Luxury fragrance advertisement with bold red aesthetics</p>
-                    </div>
-                    <div class="project-content">
-                        <img src="cherry-perfume.jpg" alt="Cherry Fragrance Advertisement">
-                        <p><strong>Tools:</strong> Canva • <strong>Role:</strong> Creative Director, Graphic Designer</p>
-                        <p>Designed with split background and splash elements to emphasize freshness and luxury positioning.</p>
-                    </div>
-                </div>
-                
-                <div class="project fade-in">
-                    <div class="project-header">
-                        <h3>Velora Cosmetics Brand Video</h3>
-                        <p>Premium beauty brand promotional campaign</p>
-                    </div>
-                    <div class="project-content">
-                        <video controls>
-                            <source src="velora.mp4" type="video/mp4">
-                        </video>
-                        <p><strong>Tools:</strong> Canva • <strong>Role:</strong> Motion Designer, Creative Director</p>
-                        <p>Focused on smooth transitions and minimal typography to highlight premium product positioning.</p>
-                    </div>
-                </div>
-                
-                <div class="project fade-in">
-                    <div class="project-header">
-                        <h3>AI-Generated Product Advertisement</h3>
-                        <p>Modern digital marketing campaign showcase</p>
-                    </div>
-                    <div class="project-content">
-                        <video controls>
-                            <source src="ai-product-ad.mp4" type="video/mp4">
-                        </video>
-                        <p><strong>Tools:</strong> AI Tools, Canva • <strong>Role:</strong> Concept Development, AI Integration</p>
-                        <p>Demonstrates AI-assisted creative workflow with dynamic visuals and smooth transitions.</p>
-                    </div>
-                </div>
-                
-                <div class="project fade-in">
-                    <div class="project-header">
-                        <h3>Strawberry Ice Cream Campaign</h3>
-                        <p>Vibrant dessert marketing for social media</p>
-                    </div>
-                    <div class="project-content">
-                        <video controls>
-                            <source src="strawberry.mp4" type="video/mp4">
-                        </video>
-                        <p><strong>Tools:</strong> Canva • <strong>Role:</strong> Social Media Designer</p>
-                        <p>Energetic motion design with bright visuals optimized for social media engagement.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -653,4 +740,3 @@
     </script>
 </body>
 </html>
-```
