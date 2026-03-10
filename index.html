@@ -1,68 +1,462 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavya Singh - AI Social Media Portfolio</title>
+    <title>Kavya Singh - Creative AI Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; background: linear-gradient(135deg, #2563EB, #3B82F6); color: white; padding: 50px 20px; margin: -20px -20px 30px -20px; border-radius: 0 0 20px 20px; }
-        .header h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .header h2 { font-size: 1.5em; margin-bottom: 20px; opacity: 0.9; }
-        .contact-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .contact-info span { background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 20px; }
-        .section { margin-bottom: 40px; }
-        .section h2 { color: #2563EB; font-size: 2em; margin-bottom: 20px; border-bottom: 3px solid #3B82F6; padding-bottom: 10px; }
-        .section h3 { color: #059669; font-size: 1.4em; margin-bottom: 15px; margin-top: 25px; }
-        .section h4 { color: #3B82F6; font-size: 1.2em; margin-bottom: 10px; margin-top: 20px; }
-        .summary { background: #f8fafc; padding: 25px; border-radius: 10px; border-left: 5px solid #2563EB; margin-bottom: 30px; }
-        .competencies { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .competency-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 4px solid #3B82F6; transition: transform 0.3s; }
-        .competency-card:hover { transform: translateY(-5px); }
-        .competency-card h5 { color: #374151; font-size: 1.1em; margin-bottom: 10px; font-weight: bold; }
-        ul { margin-left: 20px; margin-bottom: 15px; }
-        li { margin-bottom: 8px; }
-        .highlight-box { background: white;; color: 333; padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 2px solid #e5e7eb; }
-        .highlight-box h3 { margin-bottom: 10px; }
-        .gpt-link { background: #059669; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; display: inline-block; margin: 10px 0; font-weight: bold; transition: all 0.3s; }
-        .gpt-link:hover { background: #047857; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        a { color: #2563EB; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .footer { background: #374151; color: white; text-align: center; padding: 30px; margin: 40px -20px -20px -20px; }
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .cert-item { background: #f0f9ff; padding: 15px; border-radius: 8px; border-left: 4px solid #3B82F6; }
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #45B7D1;
+            --purple: #9B59B6;
+            --orange: #F39C12;
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --shadow: 0 15px 35px rgba(0,0,0,0.1);
+            --shadow-hover: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: var(--gradient-1);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f8f9fa);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: none;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* FLOATING ELEMENTS */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            background: var(--gradient-2);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* SUMMARY BOX */
+        .summary {
+            background: var(--gradient-3);
+            padding: 3rem;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* COMPETENCY CARDS */
+        .competencies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 4rem 0;
+        }
+
+        .competency-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .competency-card:nth-child(1) { border-top: 5px solid var(--primary); }
+        .competency-card:nth-child(2) { border-top: 5px solid var(--secondary); }
+        .competency-card:nth-child(3) { border-top: 5px solid var(--accent); }
+        .competency-card:nth-child(4) { border-top: 5px solid var(--purple); }
+
+        .competency-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .competency-card h5 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .competency-card ul {
+            list-style: none;
+        }
+
+        .competency-card li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .competency-card li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+
+        /* AI PRODUCT SHOWCASE */
+        .ai-product {
+            background: var(--gradient-4);
+            padding: 4rem;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .gpt-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gpt-link:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* PORTFOLIO GRID */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin: 4rem 0;
+        }
+
+        .project {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-header {
+            padding: 2rem;
+            background: var(--gradient-2);
+            color: white;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project img, .project video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin: 1rem 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* CERTIFICATIONS */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border-left: 8px solid var(--orange);
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateX(10px);
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: var(--gradient-1);
+            color: white;
+            padding: 3rem;
+            border-radius: 30px;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .highlight-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-3);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
-            .header h1 { font-size: 2.2em; }
-            .contact-info { flex-direction: column; gap: 10px; }
-            .competencies { grid-template-columns: 1fr; }
-            .container { padding: 10px; }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .competencies {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* SCROLL ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>KAVYA SINGH</h1>
-           <p class="tagline">AI Product Developer | Graphic Designer | Social Media Marketing Specialist</p>
-            <div class="contact-info">
-                <span>📞 6392778990</span>
-                <span>✉️ kavyasinghy285@gmail.com</span>
-                <span>🔗 <a href="http://www.linkedin.com/in/kavyasingh590" style="color: white;">LinkedIn Profile</a></span>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="floating-shapes">
+            <div class="shape" style="width: 100px; height: 100px; background: var(--gradient-2); border-radius: 50%;"></div>
+            <div class="shape" style="width: 150px; height: 150px; background: var(--gradient-3); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
+            <div class="shape" style="width: 80px; height: 80px; background: var(--gradient-4); transform: rotate(45deg);"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>KAVYA SINGH</h1>
+                <p class="tagline">AI Product Developer • Graphic Designer • Creative Strategist</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h4>📱 Phone</h4>
+                        <p>6392778990</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>✉️ Email</h4>
+                        <p>kavyasinghy285@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>🔗 LinkedIn</h4>
+                        <p><a href="http://www.linkedin.com/in/kavyasingh590" style="color: white;">Connect with me</a></p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="section">
-            <div class="summary">
-                <p><strong>Innovative AI product developer and digital marketing specialist</strong> with proven experience in building purpose-driven AI solutions and managing comprehensive digital campaigns. Creator of Smart Study Assistant GPT with strict educational focus and advanced user experience design. Certified in Google AI Essentials and Prompting, with demonstrated ability to leverage artificial intelligence for both product development and marketing optimization.</p>
+    <!-- SUMMARY SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="summary fade-in">
+                <h2>Creative AI Innovator</h2>
+                <p><strong>Innovative AI product developer and digital marketing specialist</strong> with proven experience in building purpose-driven AI solutions and managing comprehensive digital campaigns. Creator of Smart Study Assistant GPT with strict educational focus and advanced user experience design. Certified in Google AI Essentials and Prompting, with demonstrated ability to leverage artificial intelligence for both product development and creative marketing optimization.</p>
             </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>🎯 Core Competencies</h2>
+    <!-- COMPETENCIES SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">🎯 Core Creative Competencies</h2>
+            
             <div class="competencies">
-                <div class="competency-card">
+                <div class="competency-card fade-in">
                     <h5>🤖 AI Development & Innovation</h5>
                     <ul>
                         <li>Custom GPT Development</li>
@@ -71,275 +465,192 @@
                         <li>AI Ethics & Boundary Design</li>
                     </ul>
                 </div>
-                <div class="competency-card">
-                    <h5>📱 Digital Marketing</h5>
+                
+                <div class="competency-card fade-in">
+                    <h5>🎨 Creative Design & Branding</h5>
+                    <ul>
+                        <li>Visual Identity Design</li>
+                        <li>Campaign Creative Direction</li>
+                        <li>Digital Art & Illustration</li>
+                        <li>Brand Strategy & Development</li>
+                    </ul>
+                </div>
+                
+                <div class="competency-card fade-in">
+                    <h5>📱 Digital Marketing & Content</h5>
                     <ul>
                         <li>Social Media Strategy</li>
                         <li>Instagram Content & Reels</li>
-                        <li>Brand Development</li>
                         <li>Multi-Platform Management</li>
+                        <li>Performance Analytics</li>
                     </ul>
                 </div>
-                <div class="competency-card">
-                    <h5>💻 Technical Skills</h5>
+                
+                <div class="competency-card fade-in">
+                    <h5>💻 Technical & Creative Skills</h5>
                     <ul>
-                        <li>Web Development</li>
-                        <li>Google Business Optimization</li>
-                        <li>Analytics & Performance Tracking</li>
+                        <li>Web Development & Design</li>
+                        <li>Photography & Videography</li>
+                        <li>Motion Graphics & Animation</li>
                         <li>AI Tool Integration</li>
                     </ul>
                 </div>
-                <div class="competency-card">
-                    <h5>🎨 Creative & Content Skills</h5>
-                    <ul>
-                        <li>Photography & Videography</li>
-                        <li>Educational Content Creation</li>
-                        <li>Visual Storytelling</li>
-                        <li>Campaign Design & Execution</li>
-                    </ul>
-                </div>
             </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>🚀 AI Product Development</h2>
-            <h3>Smart Study Assistant GPT - Specialized Educational AI Tool</h3>
+    <!-- AI PRODUCTS SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">🚀 AI Product Innovation</h2>
             
-            <div style="text-align: center; margin: 20px 0;">
+            <div class="ai-product fade-in">
+                <h3>Smart Study Assistant GPT</h3>
+                <p>Specialized Educational AI Tool with Advanced Boundary Design</p>
                 <a href="https://chatgpt.com/g/g-699f608523cc8191a56fa6d83c3ed2c1-smart-study-assistant" class="gpt-link" target="_blank">
-                    🎓 View Live AI Tool →
+                    🎓 Experience Live AI Tool →
                 </a>
             </div>
-
-            <div class="highlight-box">
-                <h3>🏆 Innovation Achievement</h3>
-                <p>Developed a purpose-built AI assistant with strict educational boundaries and advanced user experience design</p>
-            </div>
-
-            <h4>Key Features & Specialized Design:</h4>
-            <ul>
-                <li><strong>Strict Educational Focus:</strong> Programmed to exclusively handle study-related queries and refuse non-academic requests, ensuring focused user experience</li>
-                <li><strong>Intelligent Content Breakdown:</strong> Transforms complex subjects into digestible learning modules with step-by-step explanations</li>
-                <li><strong>Personalized Study Planning:</strong> Generates customized learning paths based on individual academic goals and learning preferences</li>
-                <li><strong>Interactive Learning Support:</strong> Adaptive questioning systems that adjust to user comprehension levels</li>
-                <li><strong>Multi-Subject Expertise:</strong> Comprehensive knowledge integration across academic disciplines with specialized teaching methodologies</li>
-            </ul>
-
-            <h4>Technical Implementation & AI Ethics:</h4>
-            <ul>
-                <li><strong>Boundary Setting & Quality Control:</strong> Implemented sophisticated filtering mechanisms to maintain educational focus and prevent scope creep</li>
-                <li><strong>Advanced Prompt Engineering:</strong> Custom instruction sets designed for optimal educational context understanding and response accuracy</li>
-                <li><strong>User Experience Optimization:</strong> Designed conversation flows specifically for learning environments with progress tracking capabilities</li>
-                <li><strong>Ethical AI Development:</strong> Incorporated responsible AI principles including appropriate content filtering and educational best practices</li>
-            </ul>
-        </div>
-        
-<div class="section">
-    <h2>🚀 AI Web Applications</h2>
-    <h3>Flash Card Generator - AI-Powered Study Tool</h3>
-    
-    <div style="text-align: center; margin: 20px 0;">
-        <a href="https://flash-card-gen.lovable.app/" class="gpt-link" target="_blank">
-        🃏 Try Flash Card Gen Live →
-     </a>
-    </div>
-
-    <div class="highlight-box">
-        <h3>✨ Modern AI App Development</h3>
-        <p>Built with Lovable.dev AI platform - instant full-stack app deployment</p>
-    </div>
-
-    <h4>Key Features:</h4>
-    <ul>
-        <li><strong>AI Flashcard Generation:</strong> Instant study cards from any topic</li>
-        <li><strong>Modern AI Stack:</strong> Lovable.dev full-stack platform</li>
-        <li><strong>Live Deployment:</strong> Production-ready web application</li>
-        <li><strong>Educational Focus:</strong> Perfect companion to Smart Study Assistant</li>
-    </ul>
-<section id="creative-design">
-
-<h2>Creative Advertising & Design</h2>
-
-<div class="project">
-
-<h3>Cherry Bloom Fragrance Advertisement</h3>
-
-<p><strong>Concept:</strong> A luxury fragrance advertisement inspired by cherry notes and bold red aesthetics.</p>
-
-<p><strong>Design Approach:</strong> Used a split background and splash elements to emphasize freshness and intensity while maintaining a premium product feel.</p>
-
-<p><strong>Tools:</strong> Canva</p>
-
-<p><strong>Role:</strong> Graphic Designer</p>
-
-<img src="cherry-perfume.jpg" alt="Cherry Fragrance Advertisement">
-
-</div>
-
-
-<div class="project">
-
-<h3>Cupcake Flavor Campaign</h3>
-
-<p><strong>Concept:</strong> A dessert product campaign showcasing multiple cupcake flavors with consistent pastel branding.</p>
-
-<p><strong>Design Approach:</strong> Each flavor uses a color palette reflecting its taste while maintaining visual consistency.</p>
-
-<p><strong>Tools:</strong> Canva</p>
-
-<p><strong>Role:</strong> Graphic Designer</p>
-
-<video controls width="420">
-<source src="cupcake-ad.mp4" type="video/mp4">
-</video>
-
-</div>
-
-
-<div class="project">
-
-<h3>Ice Cream Flavor Campaign</h3>
-
-<p><strong>Concept:</strong> A vibrant dessert campaign highlighting different ice cream flavors designed for social media promotion.</p>
-
-<p><strong>Design Approach:</strong> Bright color palettes and clean layouts were used to visually represent each flavor.</p>
-
-<p><strong>Tools:</strong> Canva</p>
-
-<p><strong>Role:</strong> Graphic Designer</p>
-
-<img src="strawberry-icecream.jpg" alt="Strawberry Ice Cream Poster">
-<img src="chocolate-icecream.jpg" alt="Chocolate Ice Cream Poster">
-<img src="pistachio-icecream.jpg" alt="Pistachio Ice Cream Poster">
-
-</div>
-
-
-<div class="project">
-
-<h3>Velora Product Advertisement</h3>
-
-<p><strong>Concept:</strong> A short promotional video showcasing a premium cosmetic brand aesthetic.</p>
-
-<p><strong>Design Approach:</strong> Focused on smooth transitions and minimal typography to highlight the product.</p>
-
-<p><strong>Tools:</strong> Canva</p>
-
-<p><strong>Role:</strong> Creative Direction, Motion Design</p>
-
-<video controls width="420">
-<source src="velora.mp4" type="video/mp4">
-</video>
-
-</div>
-
-
-<div class="project">
-
-<h3>Ice Cream Advertisement</h3>
-
-<p><strong>Concept:</strong> A visually engaging advertisement promoting an ice cream product with vibrant colors and energetic motion.</p>
-
-<p><strong>Design Approach:</strong> Focused on product focus, playful motion, and bright visuals suitable for social media marketing.</p>
-
-<p><strong>Tools:</strong> Canva</p>
-
-<p><strong>Role:</strong> Graphic Designer</p>
-
-<video controls width="420">
-<source src="strawberry-ad.mp4" type="video/mp4">
-</video>
-
-</div>
-
-
-<div class="project">
-
-<h3>AI Generated Product Advertisement</h3>
-
-<p><strong>Concept:</strong> A product advertisement video created using AI-assisted creative tools to simulate a modern digital marketing campaign.</p>
-
-<p><strong>Design Approach:</strong> Focused on dynamic visuals and smooth transitions to demonstrate AI-supported ad creation.</p>
-
-<p><strong>Tools:</strong> AI Tools, Canva</p>
-
-<p><strong>Role:</strong> Concept Development, Creative Direction</p>
-
-<video controls width="420">
-<source src="ai-product-ad.mp4" type="video/mp4">
-</video>
-
-</div>
-
-</section>
-        <div class="section">
-            <h2>💼 Professional Experience</h2>
-            <h3>Digital Marketing Specialist | Dental Clinic (Ongoing)</h3>
             
-            <h4>Comprehensive Digital Brand Development & Management</h4>
-            <ul>
-                <li>Built complete digital presence from ground up including Google Business profile and Instagram account</li>
-                <li>Created and executed ongoing content strategy featuring original photography and video content</li>
-                <li>Developed brand-consistent visual identity and messaging for healthcare industry</li>
-                <li>Produced engaging Instagram Reels showcasing clinic services and patient education</li>
-                <li>Implemented multi-platform marketing approach to increase local visibility and patient engagement</li>
-            </ul>
-
-            <h4>AI Integration & Innovation:</h4>
-            <ul>
-                <li>Utilized AI-powered content generation to create educational health content at scale</li>
-                <li>Implemented AI image enhancement techniques for professional clinic photography</li>
-                <li>Leveraged advanced prompt engineering strategies for targeted social media campaigns</li>
-                <li>Applied AI analytics tools to optimize posting schedules and content performance</li>
-                <li>Integrated custom AI solutions to streamline content creation workflows</li>
-            </ul>
+            <div class="ai-product fade-in">
+                <h3>Flash Card Generator</h3>
+                <p>AI-Powered Study Tool Built with Modern Full-Stack Technology</p>
+                <a href="https://flash-card-gen.lovable.app/" class="gpt-link" target="_blank">
+                    🃏 Try Flash Card Generator →
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>🏅 Certifications & Credentials</h2>
+    <!-- CREATIVE PORTFOLIO SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">🎨 Creative Design Portfolio</h2>
+            
+            <div class="portfolio-grid">
+                <div class="project fade-in">
+                    <div class="project-header">
+                        <h3>Cherry Bloom Fragrance Campaign</h3>
+                        <p>Luxury fragrance advertisement with bold red aesthetics</p>
+                    </div>
+                    <div class="project-content">
+                        <img src="cherry-perfume.jpg" alt="Cherry Fragrance Advertisement">
+                        <p><strong>Tools:</strong> Canva • <strong>Role:</strong> Creative Director, Graphic Designer</p>
+                        <p>Designed with split background and splash elements to emphasize freshness and luxury positioning.</p>
+                    </div>
+                </div>
+                
+                <div class="project fade-in">
+                    <div class="project-header">
+                        <h3>Velora Cosmetics Brand Video</h3>
+                        <p>Premium beauty brand promotional campaign</p>
+                    </div>
+                    <div class="project-content">
+                        <video controls>
+                            <source src="velora.mp4" type="video/mp4">
+                        </video>
+                        <p><strong>Tools:</strong> Canva • <strong>Role:</strong> Motion Designer, Creative Director</p>
+                        <p>Focused on smooth transitions and minimal typography to highlight premium product positioning.</p>
+                    </div>
+                </div>
+                
+                <div class="project fade-in">
+                    <div class="project-header">
+                        <h3>AI-Generated Product Advertisement</h3>
+                        <p>Modern digital marketing campaign showcase</p>
+                    </div>
+                    <div class="project-content">
+                        <video controls>
+                            <source src="ai-product-ad.mp4" type="video/mp4">
+                        </video>
+                        <p><strong>Tools:</strong> AI Tools, Canva • <strong>Role:</strong> Concept Development, AI Integration</p>
+                        <p>Demonstrates AI-assisted creative workflow with dynamic visuals and smooth transitions.</p>
+                    </div>
+                </div>
+                
+                <div class="project fade-in">
+                    <div class="project-header">
+                        <h3>Strawberry Ice Cream Campaign</h3>
+                        <p>Vibrant dessert marketing for social media</p>
+                    </div>
+                    <div class="project-content">
+                        <video controls>
+                            <source src="strawberry.mp4" type="video/mp4">
+                        </video>
+                        <p><strong>Tools:</strong> Canva • <strong>Role:</strong> Social Media Designer</p>
+                        <p>Energetic motion design with bright visuals optimized for social media engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">🏅 Professional Certifications</h2>
+            
             <div class="cert-grid">
-                <div class="cert-item">
+                <div class="cert-item fade-in">
                     <h4>🎖️ Google AI Essentials Certification</h4>
-                    <p><strong>2026</strong> - Comprehensive training in AI applications, ethics, and practical implementation</p>
+                    <p><strong>2024</strong> - Comprehensive training in AI applications, ethics, and practical implementation for creative and business solutions.</p>
                 </div>
-                <div class="cert-item">
+                
+                <div class="cert-item fade-in">
                     <h4>🎯 Google Prompting Essentials Certification</h4>
-                    <p><strong>2026</strong> - Advanced prompt engineering techniques for optimal AI model interaction</p>
+                    <p><strong>2024</strong> - Advanced prompt engineering techniques for optimal AI model interaction and creative content generation.</p>
                 </div>
-                <div class="cert-item">
+                
+                <div class="cert-item fade-in">
                     <h4>🤖 Custom GPT Development & AI Ethics</h4>
-                    <p><strong>2026</strong> - Specialized AI product development with boundary design and user experience optimization</p>
+                    <p><strong>2024</strong> - Specialized AI product development with boundary design, user experience optimization, and ethical AI implementation.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>🎯 AI Innovation Strategy for Social Media Excellence</h2>
-            
-            <h3>Advanced Content Creation & Automation</h3>
-            <ul>
-                <li><strong>Specialized AI Tool Development:</strong> Create purpose-built GPTs for specific brand needs, ensuring focused functionality and consistent brand voice across all platforms</li>
-                <li><strong>Intelligent Content Pipeline Design:</strong> Develop AI-powered workflows with built-in quality controls and brand compliance checks for scalable content production</li>
-                <li><strong>Predictive Trend Integration:</strong> Build AI systems that analyze emerging trends while maintaining brand authenticity and audience relevance</li>
-            </ul>
-
-            <h3>Data-Driven Campaign Optimization</h3>
-            <ul>
-                <li><strong>Performance Prediction Models:</strong> Implement AI analytics with educational boundaries and ethical considerations to forecast content success</li>
-                <li><strong>Audience Segmentation Intelligence:</strong> Develop responsible AI-driven audience analysis tools that respect user privacy while enabling targeted content delivery</li>
-                <li><strong>Real-time Campaign Adjustment:</strong> Create AI monitoring systems with built-in safeguards that optimize campaigns based on ethical data usage principles</li>
-            </ul>
+    <!-- HIGHLIGHT SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="highlight-box fade-in">
+                <h3>🌟 Ready to Revolutionize Creative Marketing with Ethical AI Innovation</h3>
+                <p style="font-size: 1.2rem; font-style: italic; margin-top: 1rem;">Bringing proven AI product development, certified expertise, creative excellence, and strategic marketing success to create impactful, responsible, and results-driven creative solutions that push boundaries while maintaining ethical standards.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="highlight-box">
-            <h3>🌟 Ready to Revolutionize Social Media Marketing with Ethical AI Innovation</h3>
-            <p style="font-style: italic;">Bringing proven AI product development, certified expertise, and strategic marketing success to create impactful, responsible, and results-driven social media solutions</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <h3>Portfolio Demonstrates: Creative AI Innovation • Design Excellence • Ethical Development • Professional Results</h3>
+            <p style="margin-top: 1rem; opacity: 0.8;">© 2024 Kavya Singh - Creative AI Designer & Strategic Innovator</p>
         </div>
+    </footer>
 
-        <div class="footer">
-            <h3>Portfolio Demonstrates: Purpose-Driven AI Development • Marketing Excellence • Ethical Innovation • Professional Results</h3>
-            <p style="margin-top: 10px; opacity: 0.8;">© 2026 Kavya Singh - AI Social Media Content Specialist</p>
-        </div>
-    </div>
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initial animation
+        setTimeout(() => {
+            document.querySelector('.hero-content').classList.add('visible');
+        }, 500);
+    </script>
 </body>
 </html>
+```
