@@ -310,12 +310,31 @@
             padding: 2rem;
         }
 
-        .project img, .project video {
+        .project img, .project video, .project iframe {
             width: 100%;
             height: auto;
             border-radius: 15px;
             margin: 1rem 0;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            min-height: 300px;
+        }
+
+        /* VIDEO LINK STYLE */
+        .video-link {
+            display: inline-block;
+            background: var(--gradient-2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 1rem 0;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .video-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         /* CERTIFICATIONS */
@@ -545,9 +564,9 @@
                         <p>Refreshing energy drink marketing campaign with AI-enhanced visuals</p>
                     </div>
                     <div class="project-content">
-                        <video controls>
-                            <source src="https://drive.google.com/file/d/1bTQG_Ue0S52j70pQuVmaiDfOj34cs41P/view?usp=sharing" type="video/mp4">
-                        </video>
+                        <a href="https://drive.google.com/file/d/1bTQG_Ue0S52j70pQuVmaiDfOj34cs41P/view?usp=sharing" class="video-link" target="_blank">
+                            🎥 Watch Velora Citrus Spark Video →
+                        </a>
                         <img src="velora-citrus-spark.jpg" alt="Velora Citrus Spark Drink">
                         <p><strong>Tools:</strong> AI (Grok), Canva • <strong>Role:</strong> Creative Director, AI Integration Specialist</p>
                         <p>Innovative campaign for Velora Citrus Spark - a refreshing citrus energy drink with natural flavors and zero sugar. Video created using AI (Grok) showcasing dynamic product visualization and modern branding approach.</p>
@@ -560,9 +579,9 @@
                         <p>Vibrant dessert marketing showcasing multiple premium flavors</p>
                     </div>
                     <div class="project-content">
-                        <video controls>
-                            <source src="https://drive.google.com/file/d/1mv-_X8DDDt2zycRSVZFi64VOWQ1MYkOn/view?usp=sharing" type="video/mp4">
-                        </video>
+                        <a href="https://drive.google.com/file/d/1mv-_X8DDDt2zycRSVZFi64VOWQ1MYkOn/view?usp=sharing" class="video-link" target="_blank">
+                            🎥 Watch Ice Cream Campaign Video →
+                        </a>
                         <img src="strawberry-icecream.jpg" alt="Strawberry Ice Cream">
                         <img src="chocolate-icecream.jpg" alt="Chocolate Ice Cream">
                         <img src="pistachio-icecream.jpg" alt="Pistachio Ice Cream">
@@ -577,9 +596,9 @@
                         <p>Delicious dessert marketing showcasing artisanal cupcake varieties</p>
                     </div>
                     <div class="project-content">
-                        <video controls>
-                            <source src="https://drive.google.com/file/d/1vp0Uz_3YnG1LUWk73iyFVPn53Gt1qi-P/view?usp=sharing" type="video/mp4">
-                        </video>
+                        <a href="https://drive.google.com/file/d/1vp0Uz_3YnG1LUWk73iyFVPn53Gt1qi-P/view?usp=sharing" class="video-link" target="_blank">
+                            🎥 Watch Cupcake Campaign Video →
+                        </a>
                         <a href="Cupcake.pdf" target="_blank" style="display: inline-block; background: var(--gradient-2); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; margin: 1rem 0;">📄 View Cupcake Campaign Details</a>
                         <p><strong>Tools:</strong> Canva, Adobe Creative Suite • <strong>Role:</strong> Creative Director, Brand Designer</p>
                         <p>Sweet and colorful campaign highlighting artisanal cupcake flavors with premium ingredients and creative presentation techniques.</p>
