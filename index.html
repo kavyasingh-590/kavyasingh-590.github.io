@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavya Singh - Creative AI & Digital Marketing Specialist</title>
+    <title>Kavya Singh - AI Designer Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -12,60 +12,32 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
             text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1.5s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #f0f8ff);
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -73,517 +45,238 @@
 
         .subtitle {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255,107,107,0.6);
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-        }
-
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #667eea;
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 0;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-
-        h2 {
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 4rem;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Portfolio Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .portfolio-item {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.2);
-        }
-
-        .portfolio-media {
-            height: 280px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-media img, .portfolio-media video, .portfolio-media iframe {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-            border: none;
-        }
-
-        .portfolio-item:hover .portfolio-media img,
-        .portfolio-item:hover .portfolio-media video {
-            transform: scale(1.05);
-        }
-
-        .portfolio-content {
-            padding: 2rem;
-        }
-
-        .portfolio-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .portfolio-description {
             color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+            margin-bottom: 30px;
         }
 
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .tech-tag {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
-        .portfolio-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #4a5568;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            display: inline-block;
         }
 
-        .portfolio-link {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            border: 2px solid #667eea;
-            transition: all 0.3s ease;
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #2d3748;
         }
 
-        .portfolio-link:hover {
-            background: #667eea;
-            color: white;
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: #555;
         }
 
-        /* Skills Section */
-        .skills-grid {
+        .media-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
-        .skill-category {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        .video-wrapper, .image-wrapper, .pdf-wrapper {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
             text-align: center;
             transition: transform 0.3s ease;
         }
 
-        .skill-category:hover {
-            transform: translateY(-10px);
+        .video-wrapper:hover, .image-wrapper:hover, .pdf-wrapper:hover {
+            transform: scale(1.02);
         }
 
-        .skill-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+        .video-wrapper iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            border: none;
         }
 
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .image-wrapper img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .pdf-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            text-align: center;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
             text-decoration: none;
-            padding: 1rem 2rem;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50px;
+            font-weight: bold;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .contact-link:hover {
-            background: white;
-            color: #667eea;
-            transform: translateY(-3px);
-        }
-
-        /* PDF Preview */
-        .pdf-preview {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-            border: 2px dashed #667eea;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2.5rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            nav ul {
-                gap: 1.5rem;
-            }
-
-            .portfolio-media {
-                height: 250px;
-            }
-        }
-
-        /* Additional Professional Touches */
-        .highlight {
-            background: linear-gradient(120deg, #ffeaa7 0%, #fab1a0 100%);
-            padding: 0.2rem 0.5rem;
-            border-radius: 5px;
-            font-weight: 600;
+        .pdf-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
         }
 
         .ai-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #00b894, #00a085);
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
             color: white;
-            padding: 0.3rem 0.8rem;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .canva-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .section { padding: 25px; }
+            .section h2 { font-size: 2rem; }
+            .media-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
+    <div class="container">
+        <header>
             <h1>Kavya Singh</h1>
-            <p class="subtitle">Creative AI Specialist & Digital Marketing Innovator</p>
-            <a href="#portfolio" class="cta-button">Explore My Work</a>
-        </div>
-    </section>
+            <p class="subtitle">AI Designer & Creative Strategist</p>
+            <p>Transforming brands through innovative AI-powered design solutions</p>
+        </header>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>Featured Projects</h2>
-        
-        <div class="portfolio-grid">
-            <!-- VELORA CITRUS SPARK DRINK - AI Video -->
-            <div class="portfolio-item">
-                <div class="portfolio-media">
-                    <iframe src="https://drive.google.com/file/d/1bTQG_Ue0S52j70pQuVmaiDfOj34cs41P/preview" 
-                            allowfullscreen></iframe>
+        <!-- AI-Generated Product Advertisement -->
+        <section class="section">
+            <h2>🚀 AI-Generated Product Advertisement</h2>
+            
+            <h3>VELORA CITRUS SPARK DRINK Campaign</h3>
+            <p class="description">
+                Experience the refreshing burst of VELORA CITRUS SPARK DRINK - a premium beverage that energizes your day with natural citrus goodness. This comprehensive campaign showcases the vibrant essence of our citrus-infused energy drink through dynamic AI-generated video content and striking visual design. The campaign emphasizes freshness, energy, and natural ingredients to appeal to health-conscious consumers seeking a premium refreshment experience.
+            </p>
+
+            <div class="media-container">
+                <div class="video-wrapper">
+                    <h4>Campaign Video <span class="ai-badge">AI Generated (Grok)</span></h4>
+                    <iframe src="https://drive.google.com/file/d/1bTQG_Ue0S52j70pQuVmaiDfOj34cs41P/preview" allow="autoplay"></iframe>
+                    <p><em>Dynamic promotional video created using AI technology (Grok) showcasing the product's premium quality and refreshing appeal</em></p>
                 </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">AI-Generated Product Advertisement<span class="ai-badge">AI</span></h3>
-                    <p class="portfolio-description">
-                        Created a stunning promotional video for <span class="highlight">Velora Citrus Spark Drink</span> using AI (Grok). 
-                        This refreshing citrus beverage comes alive through cutting-edge AI-generated visuals 
-                        that capture its vibrant energy and premium quality. The project showcases expertise in 
-                        AI video generation, brand storytelling, and modern marketing techniques that drive engagement.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">AI Video (Grok)</span>
-                        <span class="tech-tag">Brand Advertising</span>
-                        <span class="tech-tag">Motion Graphics</span>
-                        <span class="tech-tag">Product Marketing</span>
-                    </div>
+
+                <div class="image-wrapper">
+                    <h4>Product Visual Design</h4>
+                    <img src="velora-citrus-spark.jpg" alt="VELORA CITRUS SPARK DRINK - Premium citrus energy beverage design">
+                    <p><em>Premium packaging design highlighting the natural citrus ingredients and energizing properties</em></p>
                 </div>
             </div>
+        </section>
 
-            <!-- VELORA CITRUS SPARK DRINK - Image -->
-            <div class="portfolio-item">
-                <div class="portfolio-media">
-                    <img src="https://raw.githubusercontent.com/kavyasingh-590/kavyasingh-590.github.io/main/velora-citrus-spark.jpg" 
-                         alt="Velora Citrus Spark Drink - Premium Product Photography" loading="lazy">
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Velora Citrus Spark - Product Visual</h3>
-                    <p class="portfolio-description">
-                        High-impact product photography showcasing the premium quality and vibrant appeal 
-                        of <span class="highlight">Velora Citrus Spark Drink</span>. Professional visual assets 
-                        optimized for social media campaigns, e-commerce platforms, and print advertising. 
-                        Demonstrates expertise in product styling and brand-focused photography.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Product Photography</span>
-                        <span class="tech-tag">Brand Visuals</span>
-                        <span class="tech-tag">Social Media Assets</span>
-                        <span class="tech-tag">E-commerce Ready</span>
-                    </div>
+        <!-- Ice Cream Flavors Campaign -->
+        <section class="section">
+            <h2>🍦 Premium Ice Cream Flavors Campaign</h2>
+            
+            <p class="description">
+                A comprehensive marketing campaign showcasing premium artisanal ice cream flavors designed to entice customers with rich, indulgent experiences. This campaign highlights the craftsmanship behind each flavor, emphasizing quality ingredients and artisanal preparation methods that appeal to discerning ice cream enthusiasts.
+            </p>
+
+            <div class="media-container">
+                <div class="video-wrapper">
+                    <h4>Campaign Presentation <span class="canva-badge">Created with Canva</span></h4>
+                    <iframe src="https://drive.google.com/file/d/1mv-_X8DDDt2zycRSVZFi64VOWQ1MYkOn/preview" allow="autoplay"></iframe>
+                    <p><em>Professional presentation video showcasing the complete ice cream flavors marketing strategy</em></p>
                 </div>
             </div>
 
-            <!-- Ice Cream Flavors Campaign Video -->
-            <div class="portfolio-item">
-                <div class="portfolio-media">
-                    <iframe src="https://drive.google.com/file/d/1mv-_X8DDDt2zycRSVZFi64VOWQ1MYkOn/preview" 
-                            allowfullscreen></iframe>
+            <div class="image-grid">
+                <div class="image-wrapper">
+                    <h4>Strawberry Premium</h4>
+                    <img src="strawberry-icecream.jpg" alt="Premium strawberry ice cream with fresh strawberry pieces">
+                    <p><em>Rich strawberry flavor with real fruit pieces</em></p>
                 </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Premium Ice Cream Flavors Campaign</h3>
-                    <p class="portfolio-description">
-                        Professional presentation video created using <span class="highlight">Canva</span>, showcasing a delightful range 
-                        of gourmet ice cream flavors. Comprehensive marketing campaign materials designed to 
-                        drive customer engagement and boost sales across multiple digital platforms. 
-                        Features strategic flavor positioning and appetizing visuals.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Canva Presentation</span>
-                        <span class="tech-tag">Multi-Flavor Campaign</span>
-                        <span class="tech-tag">Food Marketing</span>
-                        <span class="tech-tag">Digital Strategy</span>
-                    </div>
+                <div class="image-wrapper">
+                    <h4>Chocolate Indulgence</h4>
+                    <img src="chocolate-icecream.jpg" alt="Decadent chocolate ice cream with premium cocoa">
+                    <p><em>Decadent chocolate made with premium Belgian cocoa</em></p>
+                </div>
+                <div class="image-wrapper">
+                    <h4>Pistachio Delight</h4>
+                    <img src="pistachio-icecream.jpg" alt="Artisanal pistachio ice cream with roasted nuts">
+                    <p><em>Artisanal pistachio with roasted Sicilian nuts</em></p>
                 </div>
             </div>
+        </section>
 
-            <!-- Ice Cream Images Collection -->
-            <div class="portfolio-item">
-                <div class="portfolio-media">
-                    <img src="https://raw.githubusercontent.com/kavyasingh-590/kavyasingh-590.github.io/main/strawberry-icecream.jpg" 
-                         alt="Premium Ice Cream Collection - Food Photography" loading="lazy">
+        <!-- Cupcake Flavors Campaign -->
+        <section class="section">
+            <h2>🧁 Artisanal Cupcake Flavors Campaign</h2>
+            
+            <p class="description">
+                An elegant marketing campaign for premium artisanal cupcakes that celebrates the art of baking and the joy of indulgence. This campaign focuses on handcrafted quality, unique flavor combinations, and the emotional connection between special occasions and delicious treats. Each cupcake represents a moment of celebration and premium taste experience.
+            </p>
+
+            <div class="media-container">
+                <div class="video-wrapper">
+                    <h4>Cupcake Campaign Showcase</h4>
+                    <iframe src="https://drive.google.com/file/d/1vp0Uz_3YnG1LUWk73iyFVPn53Gt1qi-P/preview" allow="autoplay"></iframe>
+                    <p><em>Professional campaign video highlighting the artisanal quality and diverse flavor offerings</em></p>
                 </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Premium Ice Cream Collection</h3>
-                    <p class="portfolio-description">
-                        Stunning high-quality visuals featuring <span class="highlight">Strawberry, Chocolate, and Pistachio</span> 
-                        ice cream flavors. Essential marketing assets designed for social media, restaurant menus, 
-                        and promotional materials that entice customers and create irresistible cravings. 
-                        Perfect for food & beverage marketing campaigns.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Food Photography</span>
-                        <span class="tech-tag">Flavor Marketing</span>
-                        <span class="tech-tag">Social Media Ready</span>
-                        <span class="tech-tag">Menu Design</span>
-                    </div>
-                    <div class="portfolio-links">
-                        <a href="https://raw.githubusercontent.com/kavyasingh-590/kavyasingh-590.github.io/main/chocolate-icecream.jpg" 
-                           class="portfolio-link" target="_blank">🍫 View Chocolate</a>
-                        <a href="https://raw.githubusercontent.com/kavyasingh-590/kavyasingh-590.github.io/main/pistachio-icecream.jpg" 
-                           class="portfolio-link" target="_blank">🥜 View Pistachio</a>
-                    </div>
+
+                <div class="pdf-wrapper">
+                    <h4>Campaign Strategy Document</h4>
+                    <a href="Cupcake.pdf" class="pdf-link" target="_blank">
+                        📄 View Complete Cupcake Campaign Strategy
+                    </a>
+                    <p><em>Comprehensive campaign strategy including market analysis, target audience, and marketing approach</em></p>
                 </div>
             </div>
+        </section>
 
-            <!-- Cupcake Flavors Campaign -->
-            <div class="portfolio-item">
-                <div class="portfolio-media">
-                    <iframe src="https://drive.google.com/file/d/1vp0Uz_3YnG1LUWk73iyFVPn53Gt1qi-P/preview" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Gourmet Cupcake Flavors Campaign</h3>
-                    <p class="portfolio-description">
-                        Comprehensive marketing campaign for gourmet cupcake flavors featuring dynamic 
-                        promotional video and detailed campaign strategy. Includes flavor profiles, 
-                        target audience analysis, packaging recommendations, and multi-channel marketing 
-                        approach designed to maximize brand awareness and drive sales.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Video Marketing</span>
-                        <span class="tech-tag">Campaign Strategy</span>
-                        <span class="tech-tag">Brand Presentation</span>
-                        <span class="tech-tag">Market Analysis</span>
-                    </div>
-                    <div class="portfolio-links">
-                        <a href="https://raw.githubusercontent.com/kavyasingh-590/kavyasingh-590.github.io/main/Cupcake.pdf" 
-                           class="portfolio-link" target="_blank">📄 View Strategy PDF</a>
-                    </div>
-                    <div class="pdf-preview">
-                        <p><strong>📊 Includes:</strong> Market research, flavor positioning, pricing strategy, and promotional timeline</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Core Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <div class="skill-icon">🤖</div>
-                <h3>AI Content Creation</h3>
-                <p>Advanced expertise in AI-generated video, imagery, and marketing content using cutting-edge tools like Grok. Creating compelling brand narratives through AI technology.</p>
-            </div>
-            <div class="skill-category">
-                <div class="skill-icon">🎥</div>
-                <h3>Video Production & Editing</h3>
-                <p>Professional video editing, motion graphics, and promotional content creation. Expertise in Canva, Adobe Suite, and AI video generation platforms.</p>
-            </div>
-            <div class="skill-category">
-                <div class="skill-icon">📸</div>
-                <h3>Product Photography & Styling</h3>
-                <p>High-impact food and beverage photography optimized for marketing campaigns, social media, and e-commerce platforms.</p>
-            </div>
-            <div class="skill-category">
-                <div class="skill-icon">🎨</div>
-                <h3>Brand Strategy & Development</h3>
-                <p>Complete campaign development from concept to execution across digital platforms. Strategic thinking for food & beverage brands.</p>
-            </div>
-            <div class="skill-category">
-                <div class="skill-icon">💼</div>
-                <h3>Digital Marketing Excellence</h3>
-                <p>Social media campaigns, content strategy, performance marketing, and ROI-driven campaign management for maximum brand impact.</p>
-            </div>
-            <div class="skill-category">
-                <div class="skill-icon">✨</div>
-                <h3>Creative Direction & Leadership</h3>
-                <p>End-to-end creative leadership for food & beverage brands, team collaboration, and project management from ideation to delivery.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Let's Create Something Amazing Together</h2>
-        <p style="font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.95;">
-            Ready to elevate your brand with AI-powered creativity and strategic marketing excellence?
-        </p>
-        <div class="contact-links">
-            <a href="mailto:kavyasingh@example.com" class="contact-link">📧 Professional Email</a>
-            <a href="https://linkedin.com/in/kavyasingh" class="contact-link" target="_blank">💼 LinkedIn Profile</a>
-            <a href="https://github.com/kavyasingh-590" class="contact-link" target="_blank">💻 GitHub Portfolio</a>
-        </div>
-    </section>
-
-    <!-- Smooth Scrolling Script -->
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-
-        // Navigation background on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(255,255,255,0.98)';
-                nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-            } else {
-                nav.style.background = 'rgba(255,255,255,0.95)';
-                nav.style.boxShadow = 'none';
-            }
-        });
-    </script>
+        <footer>
+            <h3>Ready to Create Something Amazing?</h3>
+            <p>Let's collaborate on your next AI-powered design project</p>
+            <p><strong>Contact:</strong> kavya.singh@email.com | LinkedIn: @kavyasingh-aidesigner</p>
+        </footer>
+    </div>
 </body>
 </html>
-```
